@@ -39,8 +39,8 @@ export class DataService {
     );
   }
 
-  public getAllSongs(){
-    return this.httpClient.get(`${this.REST_API_SERVER}/songs`).
+  public getAllSongs(pageNumber: number, pageLimit: number){
+    return this.httpClient.get(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`).
     pipe(
       map((data: Song[]) =>{
         return data;

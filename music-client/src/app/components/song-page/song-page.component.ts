@@ -14,15 +14,23 @@ export class SongPageComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAllSongsList();
+    this.getAllSongsList(1, 10);
   }
 
-  getAllSongsList(){
-    this.dataService.getAllSongs()
+  getAllSongsList(pageNumber: number, pageLimit: number){
+    this.dataService.getAllSongs(pageNumber, pageLimit)
     .subscribe((data: any) => {
       console.log(data);
       this.songs = data;
     });
+  }
+
+  nextPage(){
+
+  }
+
+  previousPage(){
+
   }
 
 }
