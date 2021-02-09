@@ -1,11 +1,11 @@
 export class BaseModel {
   public id: number;
-  public date: Date;
+  public created: Date;
   public lastModified: Date;
 
-  constructor(id: number, date: Date, lastModified: Date){
+  constructor(id: number, created: Date, lastModified: Date){
     this.id = id;
-    this.date = date;
+    this.created = created;
     this.lastModified = lastModified;
   }
 }

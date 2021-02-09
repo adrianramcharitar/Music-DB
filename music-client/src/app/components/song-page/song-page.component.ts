@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Song } from 'src/app/models/song.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-song-page',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongPageComponent implements OnInit {
 
-  constructor() { }
+  songs: Song[];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getAllSongsList();
+  }
+
+  getAllSongsList(){
+    this.dataService.getAllSongs()
+    .subscribe((data: any) => {
+      console.log(data);
+      this.songs = data;
+    });
   }
 
 }

@@ -1,1 +1,8 @@
-<p>artist-page works!</p>
+<div class="artist-page-title">Artists</div>
+
+<div *ngFor="let artist of artists">
+  <!-- [class.selected]="hero === selectedHero"
+(click)="onSelect(hero)"> -->
+
+  <mat-card>{{ artist.name }}</mat-card>
+</div>

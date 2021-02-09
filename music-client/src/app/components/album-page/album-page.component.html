@@ -1,1 +1,8 @@
-<p>album-page works!</p>
+<div class="album-page-title">Album</div>
+
+<div *ngFor="let album of albums">
+  <!-- [class.selected]="hero === selectedHero"
+(click)="onSelect(hero)"> -->
+
+  <mat-card>{{ album.name }}</mat-card>
+</div>

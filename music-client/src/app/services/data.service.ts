@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Artist } from '../models/artist.model';
+import {map, catchError} from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { Album } from '../models/album.model';
+import { Song } from '../models/song.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +17,41 @@ export class DataService {
   constructor(private httpClient: HttpClient) {
    }
 
-   public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER);
+   public getAllArtists(){
+    return this.httpClient.get(`${this.REST_API_SERVER}/artists`).
+    pipe(
+      map((data: Artist[]) =>{
+        return data;
+      }), catchError (error => {
+        return throwError("Something went wrong!")
+      })
+    );
   }
 
+  public getAllAlbums(){
+    return this.httpClient.get(`${this.REST_API_SERVER}/albums`).
+    pipe(
+      map((data: Album[]) =>{
+        return data;
+      }), catchError (error => {
+        return throwError("Something went wrong!")
+      })
+    );
+  }
+
+  public getAllSongs(){
+    return this.httpClient.get(`${this.REST_API_SERVER}/songs`).
+    pipe(
+      map((data: Song[]) =>{
+        return data;
+      }), catchError (error => {
+        return throwError("Something went wrong!")
+      })
+    );
+  }
+
+
   public getAlbumById(id: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}+/albums?artist_id= + ${id}`);
+    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
   }
 }
