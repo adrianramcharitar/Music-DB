@@ -3,13 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import {ArtistPageComponent} from './components/artist-page/artist-page.component';
 import {SongPageComponent} from './components/song-page/song-page.component';
 import {AlbumPageComponent} from './components/album-page/album-page.component';
+import {MainPageComponent} from './components/main-page/main-page.component';
+
 
 
 const routes: Routes = [
+  // { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', component: MainPageComponent },
   { path: 'artists', component: ArtistPageComponent },
   { path: 'albums', component: AlbumPageComponent },
   { path: 'songs', component: SongPageComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
