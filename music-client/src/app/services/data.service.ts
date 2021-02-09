@@ -8,12 +8,16 @@ import { Injectable } from '@angular/core';
 // Gets artist info from REST endpoint
 export class DataService {
 
-  private REST_API_SERVER = "http://localhost:5000";
+  private REST_API_SERVER = 'http://localhost:5000';
 
   constructor(private httpClient: HttpClient) {
    }
 
    public sendGetRequest(){
     return this.httpClient.get(this.REST_API_SERVER);
+  }
+
+  public getAlbumById(id: number){
+    return this.httpClient.get(`${this.REST_API_SERVER}+/albums?artist_id= + ${id}`);
   }
 }
