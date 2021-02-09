@@ -17,6 +17,7 @@ export class DataService {
   constructor(private httpClient: HttpClient) {
    }
 
+   // Artists
    public getAllArtists(){
     return this.httpClient.get(`${this.REST_API_SERVER}/artists`).
     pipe(
@@ -28,6 +29,7 @@ export class DataService {
     );
   }
 
+  // Albums
   public getAllAlbums(){
     return this.httpClient.get(`${this.REST_API_SERVER}/albums`).
     pipe(
@@ -39,6 +41,11 @@ export class DataService {
     );
   }
 
+  public getAlbumById(id: number){
+    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
+  }
+s
+  // Songs
   public getAllSongs(pageNumber: number, pageLimit: number){
     return this.httpClient.get(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`).
     pipe(
@@ -50,8 +57,4 @@ export class DataService {
     );
   }
 
-
-  public getAlbumById(id: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
-  }
 }

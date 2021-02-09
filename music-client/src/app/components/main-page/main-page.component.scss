@@ -9,8 +9,21 @@
   margin: 0px 20px 0px 20px;
 }
 
-.prompt {
+.title {
   font-size: 35px;
-  padding-top: 3%;
-  padding-bottom: 20%;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-bottom: 15%;
+}
+
+.prompt {
+  text-align: center;
+  padding-bottom: 25px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.menu-select-button-icon {
+  width: 70px;
+  height: 70px;
 }

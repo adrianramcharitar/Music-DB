@@ -1,4 +1,7 @@
-<div class="prompt">Browse by:</div>
+<div class="title">Browse by:</div>
+<div class="prompt">
+  Make a selection to start browsing Artists, Albums and Songs
+</div>
 
 <div class="main-content">
   <button
@@ -6,6 +9,7 @@
     [routerLink]="['/artists']"
     mat-raised-button
   >
+    <img class="menu-select-button-icon" src="../../../assets/artist.svg" />
     Artist
   </button>
   <button
@@ -13,6 +17,7 @@
     [routerLink]="['/albums']"
     mat-raised-button
   >
+    <img class="menu-select-button-icon" src="../../../assets/album.svg" />
     Album
   </button>
   <button
@@ -20,6 +25,7 @@
     [routerLink]="['/songs']"
     mat-raised-button
   >
+    <img class="menu-select-button-icon" src="../../../assets/song.svg" />
     Song
   </button>
 </div>

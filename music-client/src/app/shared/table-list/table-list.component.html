@@ -1,0 +1,12 @@
+<div class="sorting-controls">
+  <mat-form-field appearance="fill">
+    <mat-label>Sort by</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="sort()">
+      <mat-option value="1">Ascending (A-Z)</mat-option>
+      <mat-option value="2">Descending (Z-A)</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div *ngFor="let item of inputArray">
+  <mat-card class="item-card">{{ item.name }}</mat-card>
+</div>

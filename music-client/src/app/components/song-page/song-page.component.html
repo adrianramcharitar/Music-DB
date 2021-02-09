@@ -1,8 +1,2 @@
 <div class="song-page-title">Songs</div>
-
-<div *ngFor="let song of songs">
-  <!-- [class.selected]="hero === selectedHero"
-(click)="onSelect(hero)"> -->
-
-  <mat-card>{{ song.name }}</mat-card>
-</div>
+<app-table-list [inputArray]="songs"></app-table-list>
