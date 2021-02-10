@@ -20,7 +20,6 @@ export class SongPageComponent implements OnInit {
   getAllSongsList(pageNumber: number, pageLimit: number){
     this.dataService.getAllSongs(pageNumber, pageLimit)
     .subscribe((data: any) => {
-      console.log(data);
       this.songs = data;
     });
   }

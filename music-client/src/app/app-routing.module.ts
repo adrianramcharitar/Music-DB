@@ -4,7 +4,7 @@ import {ArtistPageComponent} from './components/artist-page/artist-page.componen
 import {SongPageComponent} from './components/song-page/song-page.component';
 import {AlbumPageComponent} from './components/album-page/album-page.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
-
+import {ArtistProfilePageComponent} from './components/artist-profile-page/artist-profile-page.component';
 
 
 const routes: Routes = [
@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'artists', component: ArtistPageComponent },
   { path: 'albums', component: AlbumPageComponent },
   { path: 'songs', component: SongPageComponent },
+  { path: 'artistProfilePage', component: ArtistProfilePageComponent },
+
 ];
 
 @NgModule({

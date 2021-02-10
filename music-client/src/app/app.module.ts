@@ -10,6 +10,7 @@ import { AlbumPageComponent } from './components/album-page/album-page.component
 import { SongPageComponent } from './components/song-page/song-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { TableListComponent } from './shared/table-list/table-list.component';
+import { ArtistProfilePageComponent } from './components/artist-profile-page/artist-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TableListComponent } from './shared/table-list/table-list.component';
     AlbumPageComponent,
     SongPageComponent,
     MainPageComponent,
-    TableListComponent
+    TableListComponent,
+    ArtistProfilePageComponent
   ],
   imports: [
     BrowserModule,

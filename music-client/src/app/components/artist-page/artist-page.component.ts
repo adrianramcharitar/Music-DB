@@ -7,9 +7,11 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './artist-page.component.html',
   styleUrls: ['./artist-page.component.scss']
 })
+
 export class ArtistPageComponent implements OnInit {
 
   artists: Artist[];
+  type = "artist";
 
   constructor(private dataService: DataService) { }
 
@@ -20,14 +22,8 @@ export class ArtistPageComponent implements OnInit {
   getAllArtistList(){
     this.dataService.getAllArtists()
     .subscribe((data: any) => {
-      console.log(data);
       this.artists = data;
     });
-  }
-
-  populateArtistList(){
-
-
   }
 
 }

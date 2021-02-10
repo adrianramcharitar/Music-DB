@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Album } from 'src/app/models/album.model';
 import { DataService } from 'src/app/services/data.service';
 
@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AlbumPageComponent implements OnInit {
 
+  @Input() artistID: number;
   albums: Album[];
 
   constructor(private dataService: DataService) { }

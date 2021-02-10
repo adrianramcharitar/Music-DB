@@ -41,10 +41,10 @@ export class DataService {
     );
   }
 
-  public getAlbumById(id: number){
+  public getAlbumsByArtistId(id: number){
     return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
   }
-s
+
   // Songs
   public getAllSongs(pageNumber: number, pageLimit: number){
     return this.httpClient.get(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`).

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-table-list',
@@ -8,9 +10,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TableListComponent implements OnInit {
 
   @Input() inputArray: any;
+  @Input() type: string;
   selected: string;
 
-  constructor() { }
+  constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +25,24 @@ export class TableListComponent implements OnInit {
       return this.inputArray.sort((a, b) => 0 - (a.name > b.name ? 1 : -1));
     }
   }
+
+  filterByID(id: number): void{
+
+    if(this.type === 'artist'){
+      this.dataService.getAlbumsByArtistId(id)
+      .subscribe((data: any) => {
+        this.inputArray = data;
+      });
+    }
+
+  }
+
+  navigateToPage(){
+    this.router.navigate(['/artistProfilePage'], { relativeTo: this.route });
+  }
+
+
+
+
 
 }

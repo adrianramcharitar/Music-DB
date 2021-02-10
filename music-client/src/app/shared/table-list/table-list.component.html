@@ -8,5 +8,7 @@
   </mat-form-field>
 </div>
 <div *ngFor="let item of inputArray">
-  <mat-card class="item-card">{{ item.name }}</mat-card>
+  <mat-card class="item-card" (click)="navigateToPage()">{{
+    item.name
+  }}</mat-card>
 </div>
