@@ -11,6 +11,7 @@ import { SongPageComponent } from './components/song-page/song-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { TableListComponent } from './shared/table-list/table-list.component';
 import { ArtistProfilePageComponent } from './components/artist-profile-page/artist-profile-page.component';
+import { AlbumProfilePageComponent } from './components/album-profile-page/album-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ArtistProfilePageComponent } from './components/artist-profile-page/art
     SongPageComponent,
     MainPageComponent,
     TableListComponent,
-    ArtistProfilePageComponent
+    ArtistProfilePageComponent,
+    AlbumProfilePageComponent
   ],
   imports: [
     BrowserModule,
