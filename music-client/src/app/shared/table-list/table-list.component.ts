@@ -26,23 +26,25 @@ export class TableListComponent implements OnInit {
     }
   }
 
-  filterByID(id: number): void{
+  // filterByID(id: number): void{
 
+  //   if(this.type === 'artist'){
+  //     this.dataService.getAlbumsByArtistId(id)
+  //     .subscribe((data: any) => {
+  //       this.inputArray = data;
+  //     });
+  //   }
+
+  // }
+
+  navigateToPage(item: any){
     if(this.type === 'artist'){
-      this.dataService.getAlbumsByArtistId(id)
-      .subscribe((data: any) => {
-        this.inputArray = data;
-      });
-    }
-
+    this.router.navigate(['/artistProfilePage'], { state: { data: item } });
+    }else if (this.type === 'album'){
+      // TODO
+    }else if (this.type === 'song'){
+      // TODO
   }
-
-  navigateToPage(){
-    this.router.navigate(['/artistProfilePage'], { relativeTo: this.route });
   }
-
-
-
-
 
 }

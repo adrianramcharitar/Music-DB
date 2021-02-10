@@ -33,7 +33,7 @@ export class DataService {
   public getAllAlbums(){
     return this.httpClient.get(`${this.REST_API_SERVER}/albums`).
     pipe(
-      map((data: Album[]) =>{
+      map((data: Album[]) => {
         return data;
       }), catchError (error => {
         return throwError("Something went wrong!")
@@ -42,14 +42,21 @@ export class DataService {
   }
 
   public getAlbumsByArtistId(id: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
+    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`).
+    pipe(
+      map((data: Album[]) => {
+        return data;
+      }), catchError (error => {
+        return throwError("Something went wrong!")
+      })
+    );
   }
 
   // Songs
   public getAllSongs(pageNumber: number, pageLimit: number){
     return this.httpClient.get(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`).
     pipe(
-      map((data: Song[]) =>{
+      map((data: Song[]) => {
         return data;
       }), catchError (error => {
         return throwError("Something went wrong!")

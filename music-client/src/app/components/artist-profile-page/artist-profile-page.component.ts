@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Album } from 'src/app/models/album.model';
+import { Artist } from 'src/app/models/artist.model';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,26 +11,25 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ArtistProfilePageComponent implements OnInit {
 
-
-  @Input() artistId;
-
-  artistName: string;
-  artistDescription: string;
+  selectedArtist: Artist;
   albumsByArtist: Album[];
+  type = "albums";
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
+    this.selectedArtist = this.router.getCurrentNavigation().extras.state.data;
+    console.log(this.selectedArtist.id);
    }
 
   ngOnInit(): void {
-    this.getAlbumsByArtist(this.artistId);
+    this.getAlbumsByArtist(this.selectedArtist.id);
   }
 
   getAlbumsByArtist(artistId: number){
   this.dataService.getAlbumsByArtistId(artistId)
-  .subscribe((data: any) => {
+  .subscribe((data: Album[]) => {
     this.albumsByArtist = data;
+    console.log(this.albumsByArtist);
   });
-  console.log(this.albumsByArtist);
   }
 
 }
