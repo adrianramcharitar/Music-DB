@@ -1,9 +1,22 @@
-.item-card {
-  margin: 10px 50px 10px 50px;
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
 }
 
-.sorting-controls {
+.item-card {
+  width: 100px;
+  height: 100px;
+  margin: 10px 20px 10px 20px;
+}
+
+.search-and-sorting-controls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 50px;
+}
+
+.search-bar {
+  padding-left: 20px;
 }

@@ -29,6 +29,17 @@ export class DataService {
     );
   }
 
+  public getArtistByID(id: number){
+    return this.httpClient.get(`${this.REST_API_SERVER}/artists/${id}`).
+    pipe(
+      map((data: Artist) => {
+        return data;
+      }), catchError (error => {
+        return throwError("Something went wrong!")
+      })
+    );
+  }
+
   // Albums
   public getAllAlbums(){
     return this.httpClient.get(`${this.REST_API_SERVER}/albums`).

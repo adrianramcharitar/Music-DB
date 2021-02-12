@@ -12,6 +12,7 @@ export class TableListComponent implements OnInit {
   @Input() inputArray: any;
   @Input() type: string;
   selected: string;
+  searchQuery: string;
 
   constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) { }
 

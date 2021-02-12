@@ -12,6 +12,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { TableListComponent } from './shared/table-list/table-list.component';
 import { ArtistProfilePageComponent } from './components/artist-profile-page/artist-profile-page.component';
 import { AlbumProfilePageComponent } from './components/album-profile-page/album-profile-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlbumProfilePageComponent } from './components/album-profile-page/album
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

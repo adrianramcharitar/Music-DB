@@ -17,19 +17,25 @@ export class ArtistProfilePageComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router) {
     this.selectedArtist = this.router.getCurrentNavigation().extras.state.data;
-    console.log(this.selectedArtist.id);
    }
 
   ngOnInit(): void {
     this.getAlbumsByArtist(this.selectedArtist.id);
+    this.getSelectedArtist(this.selectedArtist.id);
   }
 
   getAlbumsByArtist(artistId: number){
   this.dataService.getAlbumsByArtistId(artistId)
   .subscribe((data: Album[]) => {
     this.albumsByArtist = data;
-    console.log(this.albumsByArtist);
   });
+  }
+
+  getSelectedArtist(artistId: number){
+    this.dataService.getArtistByID(artistId)
+    .subscribe((data: Artist) => {
+      this.selectedArtist = data;
+    });
   }
 
 }
