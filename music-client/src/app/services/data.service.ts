@@ -17,62 +17,32 @@ export class DataService {
   constructor(private httpClient: HttpClient) {
    }
 
+   //Generic Request
+   public getGenericRequest(requestType: string, pageNumber: number, pageLimit: number){
+    return this.httpClient.get<any[]>(`${this.REST_API_SERVER}/${requestType}?_page=${pageNumber}&_limit=${pageLimit}`);
+   }
+
    // Artists
-   public getAllArtists(){
-    return this.httpClient.get(`${this.REST_API_SERVER}/artists`).
-    pipe(
-      map((data: Artist[]) =>{
-        return data;
-      }), catchError (error => {
-        return throwError("Something went wrong!")
-      })
-    );
+   public getAllArtists(pageNumber: number, pageLimit: number){
+    return this.httpClient.get<Artist[]>(`${this.REST_API_SERVER}/artists?_page=${pageNumber}&_limit=${pageLimit}`);
   }
 
   public getArtistByID(id: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}/artists/${id}`).
-    pipe(
-      map((data: Artist) => {
-        return data;
-      }), catchError (error => {
-        return throwError("Something went wrong!")
-      })
-    );
+    return this.httpClient.get<Artist>(`${this.REST_API_SERVER}/artists/${id}`);
   }
 
   // Albums
-  public getAllAlbums(){
-    return this.httpClient.get(`${this.REST_API_SERVER}/albums`).
-    pipe(
-      map((data: Album[]) => {
-        return data;
-      }), catchError (error => {
-        return throwError("Something went wrong!")
-      })
-    );
+  public getAllAlbums(pageNumber: number, pageLimit: number){
+    return this.httpClient.get<Album[]>(`${this.REST_API_SERVER}/albums?_page=${pageNumber}&_limit=${pageLimit}`);
   }
 
   public getAlbumsByArtistId(id: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}/albums?artist_id=${id}`).
-    pipe(
-      map((data: Album[]) => {
-        return data;
-      }), catchError (error => {
-        return throwError("Something went wrong!")
-      })
-    );
+    return this.httpClient.get<Album[]>(`${this.REST_API_SERVER}/albums?artist_id=${id}`);
   }
 
   // Songs
   public getAllSongs(pageNumber: number, pageLimit: number){
-    return this.httpClient.get(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`).
-    pipe(
-      map((data: Song[]) => {
-        return data;
-      }), catchError (error => {
-        return throwError("Something went wrong!")
-      })
-    );
+    return this.httpClient.get<Song[]>(`${this.REST_API_SERVER}/songs?_page=${pageNumber}&_limit=${pageLimit}`);
   }
 
 }

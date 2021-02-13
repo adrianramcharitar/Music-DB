@@ -1,3 +1,7 @@
 <div class="artist-page-title">Browse by Artists</div>
-
 <app-table-list [inputArray]="artists" [type]="type"></app-table-list>
+<app-pagination
+  [requestType]="type"
+  [itemPerPage]="resultsPerPage"
+  (emitReturnResults)="getNewList($event)"
+></app-pagination>

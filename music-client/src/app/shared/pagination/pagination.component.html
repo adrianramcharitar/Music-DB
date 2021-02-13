@@ -1,0 +1,20 @@
+<div class="paginator-group">
+  <button
+    class="btn-paginator"
+    mat-flat-button
+    color="primary"
+    (click)="previousPageClicked()"
+    [disabled]="previousButtonDisabled"
+  >
+    Previous
+  </button>
+  <button
+    class="btn-paginator"
+    mat-flat-button
+    color="primary"
+    (click)="nextPageClicked()"
+    [disabled]="nextButtonDisabled"
+  >
+    Next
+  </button>
+</div>

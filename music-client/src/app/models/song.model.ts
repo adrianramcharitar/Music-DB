@@ -4,9 +4,11 @@ export class Song extends BaseModel {
 
   public name: string;
   public track: number;
+  public album_id: number;
 
-  constructor(id: number, created: Date, lastModified: Date, name: string, track: number){
-    super(id, created, lastModified);
+  constructor(album_id: number,track: number, id: number, name: string){
+    super(id);
+    this.album_id = album_id;
     this.name = name;
     this.track = track;
   }

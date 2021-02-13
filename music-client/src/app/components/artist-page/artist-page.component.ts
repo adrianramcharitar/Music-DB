@@ -10,20 +10,25 @@ import { DataService } from 'src/app/services/data.service';
 
 export class ArtistPageComponent implements OnInit {
 
-  artists: Artist[];
-  type = "artist";
+  artists: Artist[] = [];
+  type = "artists";
+  pageNumber: number = 1;
+  resultsPerPage: number = 10;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAllArtistList();
+    this.getAllArtistList(this.pageNumber);
   }
 
-  getAllArtistList(){
-    this.dataService.getAllArtists()
-    .subscribe((data: any) => {
+  getAllArtistList(pageNumber: number){
+    this.dataService.getAllArtists(pageNumber, this.resultsPerPage)
+    .subscribe((data: Artist[]) => {
       this.artists = data;
+      console.log(this.artists);
     });
   }
-
+  getNewList(newList: any[]) {
+    this.artists = newList;
+  }
 }

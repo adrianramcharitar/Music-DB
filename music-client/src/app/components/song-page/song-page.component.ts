@@ -10,26 +10,25 @@ import { DataService } from 'src/app/services/data.service';
 export class SongPageComponent implements OnInit {
 
   songs: Song[];
+  type = "songs";
+  pageNumber: number = 1;
+  resultsPerPage: number = 10;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAllSongsList(1, 10);
+    this.getAllSongsList(this.pageNumber);
   }
 
-  getAllSongsList(pageNumber: number, pageLimit: number){
-    this.dataService.getAllSongs(pageNumber, pageLimit)
+  getAllSongsList(pageNumber: number,){
+    this.dataService.getAllSongs(pageNumber, this.resultsPerPage)
     .subscribe((data: any) => {
       this.songs = data;
     });
   }
 
-  nextPage(){
-
-  }
-
-  previousPage(){
-
+  getNewList(newList: any[]) {
+    this.songs = newList;
   }
 
 }

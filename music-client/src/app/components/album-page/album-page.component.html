@@ -1,2 +1,7 @@
 <div class="album-page-title">Browse by Albums</div>
 <app-table-list [inputArray]="albums"></app-table-list>
+<app-pagination
+  [requestType]="type"
+  [itemPerPage]="resultsPerPage"
+  (emitReturnResults)="getNewList($event)"
+></app-pagination>

@@ -3,12 +3,14 @@ import { BaseModel } from "../shared/base.model";
 export class Album extends BaseModel {
 
   public name: string;
-  public yearReleased: number;
+  public year_released: number;
+  public artist_id: number;
 
-  constructor(id: number, created: Date, lastModified: Date, name: string, yearReleased: number){
-    super(id, created, lastModified);
+  constructor(id: number, name: string, artist_id: number, year_released: number){
+    super(id);
+    this.artist_id = artist_id;
     this.name = name;
-    this.yearReleased = yearReleased;
+    this.year_released = year_released;
   }
 
 }

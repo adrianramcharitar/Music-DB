@@ -11,19 +11,26 @@ export class AlbumPageComponent implements OnInit {
 
   @Input() artistID: number;
   albums: Album[];
+  pageNumber: number = 1;
+  resultsPerPage: number = 10;
+  type = "albums";
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAllAlbumList();
+    this.getAllAlbumList(this.pageNumber);
   }
 
-  getAllAlbumList(){
-    this.dataService.getAllAlbums()
+  getAllAlbumList(pageNumber: number){
+    this.dataService.getAllAlbums(pageNumber, this.resultsPerPage)
     .subscribe((data: any) => {
       console.log(data);
       this.albums = data;
     });
+  }
+
+  getNewList(newList: any[]) {
+    this.albums = newList;
   }
 
 }
