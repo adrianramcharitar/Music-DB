@@ -1,2 +1,11 @@
-<div class="artist-name">{{ selectedArtist.name }}</div>
+<div class="artist-name-header">
+  <img class="aritst-icon" src="../../../assets/artist.svg" />
+  <div class="artist-name">{{ selectedArtist.name }}</div>
+</div>
+<div class="artist-description">
+  Van Halen was an American rock band formed in Pasadena, California in 1974.
+  Credited with "restoring hard rock to the forefront of the music scene", Van
+  Halen was known for its energetic live shows and for the virtuosic talent of
+  its prodigy lead-guitarist, Eddie Van Halen.
+</div>
 <app-table-list [inputArray]="albumsByArtist" [type]="[type]"></app-table-list>

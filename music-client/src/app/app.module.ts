@@ -13,6 +13,11 @@ import { TableListComponent } from './shared/table-list/table-list.component';
 import { ArtistProfilePageComponent } from './components/artist-profile-page/artist-profile-page.component';
 import { AlbumProfilePageComponent } from './components/album-profile-page/album-profile-page.component';
 import { FormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
+
+export function tokenGetter() {
+  return localStorage.getItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NoopAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
