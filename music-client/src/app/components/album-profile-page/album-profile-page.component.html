@@ -1,1 +1,16 @@
-<p>album-profile-page works!</p>
+<div class="album-name-header">
+  <img class="album-icon" src="../../../assets/album.svg" />
+  <div class="album-name">{{ selectedAlbum.name }}</div>
+</div>
+<div class="album-description">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida
+  lacus luctus dolor rhoncus, nec aliquam velit rutrum. Pellentesque in ornare
+  orci. Duis consequat libero ac arcu aliquam, a aliquam urna facilisis. Nullam
+  dapibus urna eu orci mollis imperdiet. Etiam fermentum neque convallis neque
+  auctor volutpat. Aenean augue urna, scelerisque a dignissim ac, tincidunt quis
+  dolor. Vestibulum vitae ullamcorper ante. Sed posuere placerat dolor, sed
+  scelerisque est malesuada eget. Fusce at purus tempor, gravida diam posuere,
+  facilisis lectus. Integer risus lectus, fringilla at vulputate sit amet,
+  sollicitudin in nisi.
+</div>
+<app-table-list [inputArray]="songsInAlbum" [type]="type"></app-table-list>

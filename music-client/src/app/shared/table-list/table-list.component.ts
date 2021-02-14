@@ -42,7 +42,7 @@ export class TableListComponent implements OnInit {
     if (this.type === 'artists'){
     this.router.navigate(['/artistProfilePage'], { state: { data: item } });
     }else if (this.type === 'albums'){
-      // TODO
+      this.router.navigate(['/albumProfilePage'], { state: { data: item } });
     }else if (this.type === 'songs'){
       // TODO
   }
