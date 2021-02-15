@@ -41,6 +41,7 @@ export class TableListComponent implements OnInit {
   // }
 
   navigateToPage(item: any) {
+    console.log(this.type);
     if (this.type === 'artists') {
       this.router.navigate(['/artistProfilePage'], { state: { data: item } });
     } else if (this.type === 'albums') {
