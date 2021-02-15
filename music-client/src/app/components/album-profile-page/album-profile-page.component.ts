@@ -22,7 +22,7 @@ export class AlbumProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSongsInAlbum(this.selectedAlbum.id);
-    this.getSelectedAlbum(this.selectedAlbum.id);
+    //this.getSelectedAlbum(this.selectedAlbum.id);
   }
 
   getSongsInAlbum(albumId: number) {

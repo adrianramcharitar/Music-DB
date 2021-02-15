@@ -1,15 +1,28 @@
 .album-name {
-  font-size: 35px;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 2%;
+  font-size: 60px;
+  padding-top: 5px;
+  padding-left: 22px;
+}
+
+.album-icon {
+  height: 70px;
+  width: 70px;
+  padding-top: 1%;
+}
+
+.album-release-date {
+  font-size: 20px;
+  padding-left: 156px;
 }
 
 .album-name-header {
   display: flex;
-  padding-left: 20px;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  align-items: center;
 }
 
 .album-description {
-  padding: 0px 20px 50px 20px;
+  padding: 30px 20px 30px 20px;
 }
