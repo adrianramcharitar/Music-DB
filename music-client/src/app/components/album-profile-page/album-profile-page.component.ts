@@ -12,7 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 export class AlbumProfilePageComponent implements OnInit {
   selectedAlbum: Album;
   songsInAlbum: Song[];
-  type = 'albums';
+  type = 'songs';
   pageNumber: number = 1;
   resultsPerPage: number = 10;
 

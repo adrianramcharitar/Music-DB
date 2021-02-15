@@ -5,6 +5,22 @@
   width: auto;
 }
 
+.song-card {
+  width: 80%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-song-button img {
+  height: 40px;
+  width: 40px;
+}
+
+.song-info {
+  font-weight: bold;
+}
+
 .item-card {
   width: 100px;
   height: 100px;

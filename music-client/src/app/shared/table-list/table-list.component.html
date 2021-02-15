@@ -14,10 +14,26 @@
     </mat-select>
   </mat-form-field>
 </div>
-<div class="item-list">
-  <div *ngFor="let item of inputArray">
-    <mat-card class="item-card" (click)="navigateToPage(item)"
-      ><div class="item-name">{{ item.name }}</div></mat-card
-    >
+
+<div *ngIf="!checkTypeIsSong(); else songList">
+  <div class="item-list">
+    <div *ngFor="let item of inputArray">
+      <mat-card class="item-card" (click)="navigateToPage(item)"
+        ><div class="item-name">{{ item.name }}</div></mat-card
+      >
+    </div>
   </div>
 </div>
+
+<ng-template #songList>
+  <div class="song-list">
+    <div *ngFor="let item of inputArray">
+      <mat-card class="song-card" (click)="navigateToPage(item)"
+        ><div class="song-info">{{ item.track }} - {{ item.name }}</div>
+        <div class="play-song-button">
+          <img src="../../../assets/play-song.svg" alt="" />
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>
