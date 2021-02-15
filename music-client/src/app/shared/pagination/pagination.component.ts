@@ -27,7 +27,7 @@ export class PaginationComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    //this.fetchResultsByType(this.currentPage);
+    this.fetchResultsByType(this.currentPage);
   }
 
   previousPageClicked() {

@@ -55,7 +55,6 @@ export class TableListComponent implements OnInit {
   }
 
   checkTypeIsSong(): boolean {
-    console.log(this.type);
     if (this.type === 'songs') {
       return true;
     } else {
